@@ -1,0 +1,20 @@
+{
+  "name": "nextportfolio",
+  "version": "1.0.0",
+  "description": "My next portfolio",
+  "main": "app.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Andrew Huynh",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.1.2",
+    "@material-ui/icons": "^4.2.1",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
