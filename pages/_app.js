@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 import AppDrawer from '../components/AppDrawer';
+import Socials from '../components/Socials';
 
 class MyApp extends App {
     componentDidMount() {
@@ -28,6 +29,7 @@ class MyApp extends App {
                     <CssBaseline />
                     <AppDrawer />
                     <Component {...pageProps} />
+                    <Socials />
                 </ThemeProvider>
             </Container>
         );

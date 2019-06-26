@@ -6,24 +6,31 @@ import Link from 'next/link';
 
 const images = [
   {
+    url: '../static/Arch.png',
+    urlAnim: '',
+    title: 'Home',
+    width: '25%',
+    link: '/'
+  },
+  {
     url: '../static/profile3.jpg',
     urlAnim: '',
     title: 'About',
-    width: '34%',
+    width: '25%',
     link: '/about'
   },
   {
     url: '../static/code.jpg',
     urlAnim: '',
     title: 'Work',
-    width: '33%',
+    width: '25%',
     link: '/work'
   },
   {
     url: '../static/piano2.jpg',
     urlAnim: '',
     title: 'Piano',
-    width: '33%',
+    width: '25%',
     link: '/piano'
   },
 ];

@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import PhotoGrid from '../components/photoGrid'
 import Button from '@material-ui/core/Button';
+import Socials from '../components/Socials';
 
 const styles = theme => ({
     intro: {
@@ -93,6 +94,7 @@ class Index extends Component {
                         <Typography variant='h4' color="inherit" align="center">I'm</Typography>
                         <Typography variant='h2' color="inherit" align="center">Andrew Huynh</Typography>
                     </div>
+                    <Socials />
                 </section>
                 <section className={classes.section}>
                     <div className={classes.sectionText}>
@@ -114,14 +116,18 @@ class Index extends Component {
 
                 <section className={classes.section}>
                     <div className={classes.sectionText}>
-                        <Grid container spacing={1} direction="row" justify="space-evenly" alignItems="center" className={classes.padding}>
+                        <Grid container spacing={1} direction="row" justify="space-evenly" alignItems="flex-start" className={classes.padding}>
                             <Grid container item xs={12} md={6} spacing={3} >
                                 <Typography variant='h2' color="inherit" style={{ paddingBottom: 30 }}><b>fun facts</b></Typography>
                                 <section>
-                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• I first "tried" programming when I was 11 and played <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">Roblox</a>. It wasn't until I went to college that I actually wanted to pursue programming!</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• I first "tried" programming when I was 11 and played <a href="https://www.roblox.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#8bdcff' }}>Roblox</a>. It wasn't until I went to college that I actually wanted to pursue programming!</Typography>
                                     <Typography variant='h5' color="inherit" className={classes.padding3}>• I started playing piano when I was 8 years old. I make covers from time-to-time!</Typography>
-                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• I love KBBQ</Typography>
                                     <Typography variant='h5' color="inherit" className={classes.padding3}>• I enjoy traveling and exploring new things - let's be travel buddies!</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• I'm getting into game dev - thanks Unity!</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• Favorite Food: KBBQ</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• Favorite Show: Game of Thrones (Season 8 didn't happen)</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• Favorite Anime: Your Lie In April</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• Favorite language: JavaScript</Typography>
                                 </section>
                             </Grid>
                             <Grid container item xs={12} md={6} spacing={3}>
@@ -129,12 +135,13 @@ class Index extends Component {
                             </Grid>
                         </Grid>
                     </div>
+                    <hr style={{ marginLeft: '10%', marginRight: '10%', border: 'none', height: 2, backgroundColor: '#333' }} />
                 </section>
                 <section className={classes.section}>
                     <div className={classes.sectionText}>
                         <Typography variant='h2' color="inherit" style={{ paddingBottom: 30 }}><b>projects</b></Typography>
                         <Button variant="outlined" color="inherit" href="https://github.com/andrewthuynh" className={classes.button} target="_blank" style={{ marginBottom: 30 }}>
-                        <Typography variant='h5' color="inherit" align="center">MORE WORKS</Typography>
+                            <Typography variant='h5' color="inherit" align="center">MORE WORKS</Typography>
                         </Button>
                         <Grid container spacing={1} direction="row" justify="space-between" alignItems="flex-start" className={classes.padding}>
                             <Grid container item xs={12} md={6} spacing={3} >

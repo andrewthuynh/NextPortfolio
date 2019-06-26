@@ -56,7 +56,7 @@ class Work extends Component {
                     <div className={classes.sectionText}>
                         <Grid container spacing={1} direction="row" justify="space-evenly" alignItems="center" className={classes.padding}>
                             <Grid container item xs={12} md={6} spacing={3} >
-                                <Typography variant='h2' color="inherit" style={{ paddingBottom: 30 }}><b>professional experience</b></Typography>
+                                <Typography variant='h2' color="inherit" style={{ paddingBottom: 30 }}><b>work experience</b></Typography>
                                 <section>
                                     <Typography variant='h5' color="inherit" className={classes.padding3}><b>Software Engineering Intern | Savannah River Nuclear Solutions | Fall 2018 - Spring 2019</b></Typography>
                                     <Typography variant='h5' color="inherit" className={classes.padding3} style={{ paddingLeft: 20 }}>• Work in team sprints to develop custom web services to meet needs of clients across SRS </Typography>

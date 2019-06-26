@@ -56,6 +56,11 @@ class About extends Component {
                                     <Typography variant='h5' color="inherit" className={classes.padding3}>• I started playing piano when I was 8 years old. I make covers from time-to-time!</Typography>
                                     <Typography variant='h5' color="inherit" className={classes.padding3}>• I love KBBQ</Typography>
                                     <Typography variant='h5' color="inherit" className={classes.padding3}>• I enjoy traveling and exploring new things - let's be travel buddies!</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• I'm getting into game dev - thanks Unity!</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• Favorite Food: KBBQ</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• Favorite Show: Game of Thrones (Season 8 didn't happen)</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• Favorite Anime: Your Lie In April</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• Favorite language: JavaScript</Typography>
                                 </section>
                             </Grid>
                             <Grid container item xs={12} md={6} spacing={3}>
