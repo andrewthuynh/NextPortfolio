@@ -1,14 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Head from 'next/head';
-import { Typography, Grid, Container } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import NavButtons from '../components/NavButtons';
+import AppDrawer from '../components/AppDrawer';
+import Grid from '@material-ui/core/Grid';
+import AboutGrid from '../components/aboutGrid';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import PhotoGrid from '../components/photoGrid'
 
 const styles = theme => ({
     intro: {
         //backgroundColor: "#667eea",
-        backgroundColor: '#F4796B',
+        backgroundColor: '#465775',
         margin: -10,
         padding: 0
     },
@@ -17,29 +20,56 @@ const styles = theme => ({
         paddingLeft: 50,
         paddingRight: 50,
         paddingBottom: 50,
-        color: 'white'
+        color: '#ffd0ce'
     },
     introText2: {
         paddingLeft: 50,
         paddingRight: 50,
         paddingBottom: 100,
-        color: 'white'
+        color: '#ffd0ce'
     },
     section: {
         margin: -10,
         padding: 0,
     },
     sectionText: {
-        paddingLeft: '20%',
+        paddingLeft: '10%',
+        paddingRight: '10%',
         paddingTop: '2%',
     },
     underline: {
         borderBottom: 'solid 2px #000000',
         display: 'inline',
-        paddingBottom: 3
+        paddingBottom: 3,
+        marginLeft: 40
     },
     padding: {
-        paddingTop: 30
+        paddingTop: 20,
+        paddingBottom: 20
+    },
+    padding2: {
+        paddingBottom: 30
+    },
+    padding3: {
+        paddingBottom: 20
+    },
+    header: {
+        marginLeft: -10,
+        paddingTop: 30,
+        paddingLeft: '10%',
+        paddingRight: '10%',
+    },
+    image: {
+        maxWidth: '70%',
+        height: 'auto'
+    },
+    image2: {
+        maxWidth: '100%',
+        height: 'auto'
+    },
+    image3: {
+        maxWidth: '50%',
+        height: 'auto'
     }
 });
 
@@ -53,11 +83,7 @@ class Index extends Component {
 
         return (
             <Fragment>
-                <Head>
-                    <title>Andrew Huynh</title>
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-                </Head>
+                <AppDrawer />
                 <section className={classes.intro}>
                     <div className={classes.introText}>
                         <Typography variant='h5' color="inherit" align="center">Hello!</Typography>
@@ -70,28 +96,98 @@ class Index extends Component {
                 </section>
                 <section className={classes.section}>
                     <div className={classes.sectionText}>
-                        <Typography variant='h1' color="inherit" className={classes.underline}>Sections</Typography>
-                    </div>
-                    <NavButtons />
-                </section>
-                <section className={classes.section}>
-                    <div className={classes.sectionText}>
                         <Typography variant='h1' color="inherit" className={classes.underline}>About</Typography>
+                        <Typography variant='h5' color="inherit" className={classes.padding}></Typography>
+                        <AboutGrid />
+                        <Typography variant='h2' color="inherit" className={classes.padding}><b>An avid techie trying to find his place in the industry.</b></Typography>
+                        <Typography variant='h5' color="inherit" >Hello! My name is Andrew and welcome to my website. I recently graduated from the University of Georgia with a degree in Computer Science and am <b>currently looking for full-time opportunities in web/mobile development</b>.</Typography>
+                        <Typography variant='h5' color="inherit" className={classes.padding}>Whenever I am not coding, I enjoy making music, hanging with my friends, and playing video games.</Typography>
+                        <Typography variant='h5' color="inherit">Please look around to learn more about me and some of the projects I have worked on!</Typography>
+                        <hr style={{ marginTop: 40 }} />
+                        <Grid container spacing={1} direction="row" justify="space-evenly" alignItems="center" className={classes.padding}>
+                            <Grid container item xs={12} md={6} spacing={3} >
+                                <Typography variant='h2' color="inherit" style={{ paddingBottom: 30 }}><b>fun facts</b></Typography>
+                                <section>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• I first "tried" programming when I was 11 and played <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">Roblox</a>. It wasn't until I went to college that I actually wanted to pursue programming!</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• I started playing piano when I was 8 years old. I make covers from time-to-time!</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• I love KBBQ</Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}>• I enjoy traveling and exploring new things - let's be travel buddies!</Typography>
+                                </section>
+                            </Grid>
+                            <Grid container item xs={12} md={6} spacing={3}>
+                                <PhotoGrid />
+                            </Grid>
+                        </Grid>
                     </div>
                 </section>
                 <section className={classes.section}>
                     <div className={classes.sectionText}>
-                        <Typography variant='h1' color="inherit" className={classes.underline}>Code</Typography>
+                        <Typography variant='h1' color="inherit" className={classes.underline}>Work</Typography>
+                        <Typography variant='h5' color="inherit" className={classes.padding}></Typography>
+                        <Grid container spacing={1} direction="row" justify="space-evenly" alignItems="center" className={classes.padding}>
+                            <Grid container item xs={12} md={6} spacing={3} >
+                                <Typography variant='h2' color="inherit" style={{ paddingBottom: 30 }}><b>professional experience</b></Typography>
+                                <section>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}><b>Software Engineering Intern | Savannah River Nuclear Solutions | Fall 2018 - Spring 2019</b></Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3} style={{ paddingLeft: 20 }}>• Work in team sprints to develop custom web services to meet needs of clients across SRS </Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3} style={{ paddingLeft: 20 }}>• Build responsive websites using ReactJS, NodeJS, and Spring Boot </Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3} style={{ paddingLeft: 20 }}>• Assist in transitioning existing SOA front-end to Material Design</Typography>
+
+                                    <Typography variant='h5' color="inherit" className={classes.padding3}><b>IT Intern – Audit Coordinator | ​Athens Micro | Summer 2018 </b></Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3} style={{ paddingLeft: 20 }}>• Coordinate and build yearly IT audit to review company’s infrastructure, policies, and security  </Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3} style={{ paddingLeft: 20 }}>• Work with various audit companies and company members to prepare for penetration test </Typography>
+                                    <Typography variant='h5' color="inherit" className={classes.padding3} style={{ paddingLeft: 20 }}>• Develop risk assessment plan for future management review</Typography>
+                                </section>
+                            </Grid>
+                            <Grid container item xs={12} md={6} spacing={3}>
+                                <img src="../static/code.jpg" className={classes.image} />
+                            </Grid>
+                        </Grid>
+                        <Typography variant='h2' color="inherit" style={{ paddingBottom: 30 }}><b>projects</b></Typography>
+                        <Grid container spacing={1} direction="row" justify="space-between" alignItems="flex-start" className={classes.padding}>
+                            <Grid container item xs={12} md={6} spacing={3} >
+                                <img src="../static/ebooking.png" className={classes.image2} />
+                                <Typography variant='subtitle1' color="inherit" className={classes.padding3}><b>Ebooking</b> - Software Engineering | <i>Spring 2018</i></Typography>
+                            </Grid>
+                            <Grid container item xs={12} md={6} spacing={3}>
+                                <img src="../static/dogbot2.png" className={classes.image2} />
+                                <Typography variant='subtitle1' color="inherit" className={classes.padding3}><b>Discord Dog Bot</b> - Personal Project | <i>Spring 2018</i></Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid container spacing={1} direction="row" justify="space-between" alignItems="flex-start" className={classes.padding}>
+                            <Grid container item xs={12} md={4} spacing={3} >
+                                <img src="../static/soar.png" className={classes.image2} />
+                                <Typography variant='subtitle1' color="inherit" className={classes.padding3}><b>Soar Travel Planning App</b> - Directed Study | <i>Spring 2019</i></Typography>
+                            </Grid>
+                            <Grid container item xs={12} md={4} spacing={3}>
+                                <img src="../static/ctnt.png" className={classes.image2} />
+                                <Typography variant='subtitle1' color="inherit" className={classes.padding3}><b>Cook This Not That</b> - Human Computer Interaction | <i>Spring 2019</i></Typography>
+                            </Grid>
+                            <Grid container item xs={12} md={4} spacing={3}>
+                                <img src="../static/joinotes.png" className={classes.image2} />
+                                <Typography variant='subtitle1' color="inherit" className={classes.padding3}><b>JoiNotes</b> - UGAHacks | <i>Spring 2018</i></Typography>
+                            </Grid>
+                        </Grid>
                     </div>
                 </section>
                 <section className={classes.section}>
                     <div className={classes.sectionText}>
-                        <Typography variant='h1' color="inherit" className={classes.underline}>Piano</Typography>
+                    <Typography variant='h1' color="inherit" className={classes.underline}>Piano</Typography>
+                    <Typography variant='h5' color="inherit" className={classes.padding}></Typography>
+                        <Grid container spacing={1} direction="row" justify="space-around" alignItems="flex-start" className={classes.padding}>
+                            <Grid container item xs={12} spacing={3}>
+                                <img src="../static/piano.jpg" className={classes.image} />
+                            </Grid>
+                            <Grid container item xs={12} spacing={3} >
+                                <section>
+                                    <Typography variant='h2' color="inherit" className={classes.padding}><b>covers</b></Typography>
+                                </section>
+                            </Grid>
+                        </Grid>
                     </div>
                 </section>
             </Fragment>
         )
     }
 }
-
 export default withStyles(styles)(Index);

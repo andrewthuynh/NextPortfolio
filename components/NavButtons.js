@@ -2,31 +2,30 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 const images = [
   {
-    url: '../static/food.jpg',
+    url: '../static/Arch.png',
+    urlAnim: '',
+    title: 'Home',
+    width: '25%',
+  },
+  {
+    url: '../static/profile3.jpg',
     urlAnim: '',
     title: 'About',
-    width: '50%',
+    width: '25%',
   },
   {
-    url: '../static/food.jpg',
+    url: '../static/code.jpg',
     urlAnim: '',
     title: 'Code',
-    width: '50%',
+    width: '25%',
   },
   {
-    url: '../static/food.jpg',
+    url: '../static/piano2.jpg',
     urlAnim: '',
     title: 'Piano',
-    width: '50%',
-  },
-  {
-    url: '../static/food.jpg',
-    urlAnim: '',
-    title: 'Contact',
-    width: '50%',
+    width: '25%',
   },
 ];
 
@@ -35,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     minWidth: 300,
-    width: '60%',
+    width: '100%',
     paddingTop: 50,
   },
   image: {
@@ -43,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     height: 300,
     [theme.breakpoints.down('xs')]: {
-      width: '50% !important', // Overrides inline-style
+      width: '100% !important', // Overrides inline-style
       height: 100,
     },
     '&:hover, &$focusVisible': {
@@ -122,12 +121,6 @@ export default function NavButtons() {
   const classes = useStyles();
 
   return (
-    <Grid
-    container
-    direction="row"
-    justify="center"
-    alignItems="center"
->
     <div className={classes.root}>
       {images.map(image => (
         <ButtonBase
@@ -169,6 +162,5 @@ export default function NavButtons() {
         </ButtonBase>
       ))}
     </div>
-    </Grid>
   );
 }
