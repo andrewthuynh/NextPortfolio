@@ -47,10 +47,20 @@ class photoGrid extends Component {
                 title: 'about',
                 cols: 1,
             },
+            {
+                img: '../static/flower.jpg',
+                title: 'flower',
+                cols: 1,
+            },
+            {
+                img: '../static/hike.jpg',
+                title: 'hike',
+                cols: 1,
+            },
         ];
         return (
             <div className={classes.root}>
-                <GridList cellHeight={this.props.width=='xs' ? 200 : 400} className={classes.gridList} cols={this.props.width=='xs' ? 1 : 2}>
+                <GridList cellHeight={300} className={classes.gridList} cols={this.props.width=='xs' ? 1 : 3}>
                     {tileData.map(tile => (
                         <GridListTile key={tile.img} cols={tile.cols}>
                             <img src={tile.img} alt={tile.title} className={classes.image} />

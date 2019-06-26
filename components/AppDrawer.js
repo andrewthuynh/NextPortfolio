@@ -1,16 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Fab from '@material-ui/core/Fab';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import NavButtons from '../components/NavButtons';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import Link from 'next/link';
 
 const useStyles = makeStyles({
   list: {
@@ -19,10 +16,22 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
-  fab:{
-      position: 'fixed',
-      marginTop: 20
-  }
+  fab: {
+    position: 'fixed',
+    marginTop: 20
+  },
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: 5,
+  },
+  title: {
+    flexGrow: 1,
+    color: '#ff9679',
+    marginLeft: '10%',
+    cursor: 'pointer'
+  },
 });
 
 export default function AppDrawer() {
@@ -51,13 +60,24 @@ export default function AppDrawer() {
   );
 
   return (
-    <div>
-     
-      <Fab onClick={toggleDrawer('top', true)} variant="extended" size="large" color="secondary" className={classes.fab}><MenuIcon /> MENU</Fab>
+
+    <div className={classes.root}>
+      <AppBar position="static" color="inherit" style={{boxShadow: "none"}}>
+        <Toolbar>
+        <Link href="/">
+          <Typography variant="h4" className={classes.title}>
+            ANDREW HUYNH
+          </Typography>
+          </Link>
+          <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="Menu" onClick={toggleDrawer('top', true)}>
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
       <Drawer anchor="top" open={state.top} onClose={toggleDrawer('top', false)}>
         {fullList('top')}
       </Drawer>
-
     </div>
+
   );
 }

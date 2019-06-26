@@ -2,30 +2,29 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
+import Link from 'next/link';
+
 const images = [
-  {
-    url: '../static/Arch.png',
-    urlAnim: '',
-    title: 'Home',
-    width: '25%',
-  },
   {
     url: '../static/profile3.jpg',
     urlAnim: '',
     title: 'About',
-    width: '25%',
+    width: '34%',
+    link: '/about'
   },
   {
     url: '../static/code.jpg',
     urlAnim: '',
-    title: 'Code',
-    width: '25%',
+    title: 'Work',
+    width: '33%',
+    link: '/work'
   },
   {
     url: '../static/piano2.jpg',
     urlAnim: '',
     title: 'Piano',
-    width: '25%',
+    width: '33%',
+    link: '/piano'
   },
 ];
 
@@ -123,9 +122,9 @@ export default function NavButtons() {
   return (
     <div className={classes.root}>
       {images.map(image => (
+        <Link href={image.link} key={image.title}>
         <ButtonBase
           focusRipple
-          key={image.title}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
           style={{
@@ -160,6 +159,7 @@ export default function NavButtons() {
             </Typography>
           </span>
         </ButtonBase>
+        </Link>
       ))}
     </div>
   );
