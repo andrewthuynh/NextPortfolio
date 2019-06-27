@@ -12,7 +12,7 @@ This is my new portfolio, featuring a cleaner interface and more content.
 
 ## Screenshots
 
-![login](static/screen.png)
+![login](assets/screen.png)
 
 
 3. [Live Website](https://andrewhuynh.com/)
