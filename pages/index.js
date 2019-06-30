@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import PhotoGrid from '../components/photoGrid'
 import Button from '@material-ui/core/Button';
 import Socials from '../components/Socials';
+import {getImage} from '../lib/image';
 
 const styles = theme => ({
     intro: {
@@ -59,7 +60,7 @@ const styles = theme => ({
         paddingRight: '10%',
     },
     image: {
-        maxWidth: '70%',
+        maxWidth: '100%',
         height: 'auto'
     },
     image2: {
@@ -79,6 +80,7 @@ class Index extends Component {
     state = {
 
     }
+
     render() {
 
         const { classes } = this.props;
@@ -106,7 +108,7 @@ class Index extends Component {
                                 <Typography variant='h5' color="inherit" className={classes.padding2}>Please look around to learn more about me and some of the projects I have worked on!</Typography>
                             </Grid>
                             <Grid container item xs={12} md={6} spacing={3}>
-                                <img src="../static/home.jpg" className={classes.image} />
+                                <img src={getImage('home.jpg')} className={classes.image} />
                             </Grid>
                         </Grid>
                         <hr style={{ marginTop: 40 }} />
